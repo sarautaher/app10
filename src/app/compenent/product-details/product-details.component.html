@@ -1,0 +1,20 @@
+<div class="py-5">
+    <div class="container">
+        <div class="row gy-2">
+            <div class="col-md-3">
+                <img [src]="ProductDetails?.image" class="w-100">
+            </div>
+            <div class="col-md-9">
+                <h3 class="text-center">{{ProductDetails?.category}}</h3>
+                <p class="text-desc">{{ProductDetails?.description}}</p>
+                <p>price: {{ProductDetails?.price}}L.E</p>
+                <div class=" d-flex justify-content-between">
+                    <p>Rate:{{ProductDetails?.rating.rate}}</p>
+                    <p>Count:{{ProductDetails?.rating.count}}</p>
+                </div>
+                <app-addto-cart  [productId]="ProductDetails?.id" [img]="ProductDetails.image"></app-addto-cart>
+                <!-- <button class="btn btn-success w-50 m-auto  border-none my-2"[routerLink]="['/AddTocart',ProductDetails?.id]"> Add To Cart </button> -->
+            </div>
+        </div>
+    </div>
+</div>

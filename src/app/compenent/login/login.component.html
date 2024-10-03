@@ -1,0 +1,33 @@
+<div class="py-3">
+    <div class="container">
+        <div class="row  bg-light shadow p-4 gy-3">
+            <div class="col-8 m-auto">
+
+                <h2 class="text-center">log in</h2>
+                <form (ngSubmit)="login(User)" [formGroup]="User">
+                <div class="row gy-3">
+                        <div class="col-12 ">
+                            <input class="form-control m-3" type="text" formControlName="username" placeholder="Enter Your Username">
+                            <div *ngIf="User.get('username')?.errors &&User.touched" >
+                                <p class="text-danger" *ngIf="User.get('username')?.getError('required')"> Username is required</p>
+                                <p class="text-danger" *ngIf="User.get('username')?.getError('maxLength')"> Username must be maxLength 8</p>
+                                <p class="text-danger" *ngIf="User.get('username')?.getError('minLength')"> Username must be minLength 3</p>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <input class="form-control m-3" type="password" formControlName="password" placeholder="Enter Your Password">
+                            <div *ngIf="User.get('password')?.errors &&User.touched" >
+                                <p class="text-danger" *ngIf="User.get('password')?.getError('required')"> password is required</p>
+                                <p class="text-danger" *ngIf="User.get('password')?.getError('pattern')"> Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.</p>
+                             
+                            </div>
+                        </div>
+                        <div class="col-12 text-end">
+                          <button type="submit" class="btn btn-info " >log in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

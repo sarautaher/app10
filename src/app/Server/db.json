@@ -1,0 +1,63 @@
+{
+  "Login": [
+    {
+      "username": "",
+      "password": "",
+      "id": "1",
+      "token": ""
+    },
+    {
+      "id": "5d79",
+      "username": "Sara",
+      "password": "Taher@2810"
+    },
+    {
+      "id": "2ac9",
+      "username": "Sara",
+      "password": "Taher@18"
+    }
+  ],
+  "sinup": [
+    {
+      "email": "",
+      "username": "",
+      "password": "",
+      " name": {
+        "firstname": "",
+        "lastname": ""
+      },
+      " address": {
+        " city": "",
+        " street": "",
+        "number": "",
+        "zipcode": "",
+        " geolocation": {
+          "lat": "",
+          "long": ""
+        },
+        " phone": ""
+      },
+      "id": "1"
+    }
+  ],
+  "Cart": [
+    {
+      "id": "5dff",
+      "img": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "date": "10/3/2024",
+      "products": {
+        "productId": 2,
+        "quantity": "20"
+      }
+    },
+    {
+      "id": "e455",
+      "img": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "date": "10/3/2024",
+      "products": {
+        "productId": 3,
+        "quantity": "22"
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<nav id="navbar-example" class='navbar pt-3 pb-1  navbar-expand-lg  navbar-light  bg-danger-subtle   '  >
+              
+    <div class="container">
+
+    <a class="navbar-brand" routerLink="home" *ngIf="isload">Market</a>
+    <a class="navbar-brand" *ngIf="!isload">Market</a>
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown"> 
+   
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       
+            <li class="nav-item "*ngIf="isload">
+                <a class="nav-link" routerLink="products" >Product </a>
+            </li>
+        </ul>
+        
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li  class="nav-item active" *ngIf="!isload">
+                <a class="nav-link" routerLink="login">login </a>
+            </li>
+            <li  class="nav-item active" *ngIf="!isload">
+                <a class="nav-link" routerLink="Sinup">Sinup </a>
+            </li>
+  
+    
+             <li  class="nav-item " *ngIf="isload">
+                <a class="nav-link" routerLink="cart"><i class='fa-solid fa-cart-shopping text-main fa-lg '> </i>
+            
+                    <span class="badge bg-main "> </span>
+                 </a>
+            </li>
+  
+       <li  class="nav-item " *ngIf="isload">
+            <a class="nav-link"  (click)="logOut()">Logout</a>
+        </li> 
+        </ul>
+</div>
+</div>
+
+</nav>
+
+ 

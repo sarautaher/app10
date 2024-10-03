@@ -1,0 +1,124 @@
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 m-auto">
+
+                <form (ngSubmit)="sinUp(user)"[formGroup]="user">
+        
+                    <div class="row gy-3">
+                        <div class=" col-12 py-1" *ngIf="!err">
+                                 {{err}}
+                        </div>
+                        <div class=" col-12 py-1">
+                            <input type="text" formControlName="username" placeholder="Enter your username" class="form-control">
+                            <div *ngIf="user.get('username')?.errors&& user.get('username')?.touched">
+                                <small class="text-danger" *ngIf="user.get('username')?.getError('required')"> Username is required</small>
+                                <small class="text-danger" *ngIf="user.get('username')?.getError('maxLength')">  Username must be a maximum of 8 characters</small>
+                                <small class="text-danger" *ngIf="user.get('username')?.getError('minLength')">  Username must be a minimum of 3 characters</small>
+
+                            </div>
+                        </div>
+                        <div class=" col-12 py-1">
+                            <input type="email" formControlName="email" placeholder="Enter your Email" class="form-control">
+                            <div *ngIf="user.get('email')?.errors&& user.get('email')?.touched">
+                                <small class="text-danger" *ngIf="user.get('email')?.getError('required')"> email is required</small>
+                                <small class="text-danger" *ngIf="user.get('email')?.getError('email')"> Please enter a valid email</small>
+
+                            </div>
+                        </div>
+                        <div class=" col-12 py-1">
+                            <input type="password" formControlName="password" placeholder="Enter your password" class="form-control">
+                            <div *ngIf="user.get('password')?.errors &&user.get('password')?.touched" >
+                                <small class="text-danger" *ngIf="user.get('password')?.getError('required')"> password is required</small>
+                                <small class="text-danger" *ngIf="user.get('password')?.getError('pattern')"> Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+                             
+                            </div>
+                        </div>
+                        <div class=" col-12 py-1">
+                            <input type="tel" formControlName="phone" placeholder="Enter your phone" class="form-control">
+                            <div *ngIf="user.get('phone')?.errors&& user.get('phone')?.touched">
+                                <small class="text-danger" *ngIf="user.get('phone')?.getError('required')"> phone is required</small>
+                                <small class="text-danger" *ngIf="user.get('phone')?.getError('pattern')"> lastname must be maxLength 8</small>
+                                <small class="text-danger" *ngIf="user.get('phone')?.getError('minLength')"> lastname must be minLength 3</small>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div [formGroupName]="'name'" class="row">
+                        <div class=" col-md-6 py-1" >
+                            <input type="text" formControlName="firstname" placeholder="Enter your firstname" class="form-control">
+                            <div *ngIf="user.get('name.firstname')?.errors && user.get('name.firstname')?.touched" class="text-danger">
+                                <small *ngIf="user.get('name.firstname')?.getError('required')">First name is required.</small>
+                                <small *ngIf="user.get('name.firstname')?.getError('minlength')">First name must be at least 3 characters long.</small>
+                                <small *ngIf="user.get('name.firstname')?.getError('maxlength')">First name must not exceed 8 characters.</small>
+                              </div>
+                        </div>
+                        <div class=" col-md-6 py-1">
+                            <input type="text" formControlName="lastname" placeholder="Enter your lastname" class="form-control">
+                            <div *ngIf="user.get('name.lastname')?.errors&& user.get('name.lastname')?.touched">
+                                <small class="text-danger" *ngIf="user.get('name.lastname')?.getError('required')"> lastname is required</small>
+                                <small class="text-danger" *ngIf="user.get('name.lastname')?.getError('maxLength')"> lastname must be maxLength 8</small>
+                                <small class="text-danger" *ngIf="user.get('name.lastname')?.getError('minLength')"> lastname must be minLength 3</small>
+
+                            </div>
+                        </div>
+                    </div>
+                       
+                        <div [formGroupName]="'address'" class="row">
+
+
+                            <div class=" col-md-6 py-1">
+                                <input type="text" formControlName="city" placeholder="Enter your city" class="form-control">
+                                <div *ngIf="user.get('address.city')?.errors && user.get('address.city')?.touched" class="text-danger">
+                                    <small *ngIf="user.get('address.city')?.getError('required')">city is required.</small>
+                                    <small *ngIf="user.get('address.city')?.getError('minlength')">city must be at least 3 characters long.</small>
+                                    <small *ngIf="user.get('address.city')?.getError('maxlength')">city must not exceed 8 characters.</small>
+                                  </div>
+                            </div>
+                            <div class=" col-md-6 py-1">
+                                <input type="text" formControlName="street" placeholder="Enter your street" class="form-control">
+                                <div *ngIf="user.get('address.street')?.errors && user.get('address.street')?.touched" class="text-danger">
+                                    <small *ngIf="user.get('address.street')?.getError('required')">street is required.</small>
+                                    <small *ngIf="user.get('address.street')?.getError('pattern')">street must be at least 3 characters long.</small>
+                                     </div>
+                            </div>
+                            <div class=" col-md-6 py-1">
+                                <input type="text" formControlName="number" placeholder="Enter your number" class="form-control">
+                                <div *ngIf="user.get('address.number')?.errors && user.get('address.number')?.touched" class="text-danger">
+                                    <small *ngIf="user.get('address.number')?.getError('required')">number is required.</small>
+                                     </div>
+                            </div>
+                            <div class=" col-md-6 py-1">
+                                <input type="text" formControlName="zipcode" placeholder="Enter your zipcode" class="form-control">
+                                <div *ngIf="user.get('address.zipcode')?.errors && user.get('address.zipcode')?.touched" class="text-danger">
+                                    <small *ngIf="user.get('address.zipcode')?.getError('required')">zipcode is required.</small>
+                                    
+                                     </div>
+                            </div>
+                            <div [formGroupName]="'geolocation'" class="row">
+
+                                <div class=" col-md-6 py-1">
+                                    <input type="text" formControlName="lat" placeholder="Enter your lat" class="form-control">
+                                    <div *ngIf="user.get('address.geolocation.lat')?.errors && user.get('address.geolocation.lat')?.touched" class="text-danger">
+                                        <small *ngIf="user.get('address.geolocation.lat')?.getError('required')">lat is required.</small>
+                                        
+                                         </div>
+                                </div>
+                                <div class=" col-md-6 py-1">
+                                    <input type="text" formControlName="long" placeholder="Enter your long" class="form-control">
+                                    <div *ngIf="user.get('address.geolocation.long')?.errors && user.get('address.geolocation.long')?.touched" class="text-danger">
+                                        <small *ngIf="user.get('address.geolocation.long')?.getError('required')">long is required.</small>
+                                        
+                                         </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-info " >Sin Up</button>
+                          </div>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

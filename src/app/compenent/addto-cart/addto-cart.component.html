@@ -1,0 +1,16 @@
+<div >
+    <form class="form" [formGroup]="user" (ngSubmit)="addnew(user)">
+    <div class="d-flex justify-content-between ">
+      <div [formGroupName]="'products'" >
+          Quantity:
+            <select formControlName="quantity">
+              <option *ngFor="let quantity of Number" [value]="quantity">{{quantity}}</option>
+            </select>
+            <div *ngIf="user.get('products.quantity').invalid && user.get('products.quantity').touched" class="text-danger">
+              <small>Quantity is required!  </small>
+            </div>
+          </div>
+          <button class="btn btn-success w-50 m-auto  border-none my-2"[disabled]="user.invalid" type="submit"> Add To Cart </button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,45 @@
+<div class="py-5 ">
+    <div class="container">
+        <div class="row g-3 " id="product">
+            <div class="col-9 m-auto d-flex justify-content-between  ">
+                <h6>Category: </h6>   <select id="category"(change)=" getCategoryone($event)" class="form-select" >
+                    <option selected >All</option>
+                    <option *ngFor="let category of Category" >{{category}}</option>
+                    
+                </select>
+             
+            </div>
+            <div class="col-md-4" *ngFor="let product of products">
+                
+                <div class="card h-100">
+                <a [routerLink]="['/ProductDetails',product.id]" class="nav-link">
+
+                        <div class="position-relative  p-5" >
+                            <img  [src]="product.image" class="w-100  card-img py-3" height="300px">
+                            <h6 class="card-title text-center py-3">{{product.category}}</h6>
+                            <div class="position-absolute top-0 end-0 bg-info" *ngIf="product.price>600.0">{{product.price}}</div>
+                            <div class="position-absolute top-0 end-0 bg-success" *ngIf="product.price<600.0">{{product.price}}</div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p>{{product.rating.rate}}</p>
+                                <p>{{product.rating.count}}</p>
+                            </div>
+                        </div>
+                      
+                    </a>
+                    <div class="text-center">
+                        <app-addto-cart  [productId]="product?.id" [img]="product.image"></app-addto-cart>
+                      </div>
+                      
+
+                        <!-- <button class="btn btn-success w-50 m-auto  border-none my-2"[routerLink]="['/AddTocart',product.id]"> Add To Cart </button> -->
+              
+                    </div>
+               
+            </div>
+            <!-- <div class="position-fixed top-50 start-50 translate-middle">
+                <app-add-tocart></app-add-tocart>
+            </div> -->
+            
+        </div>
+    </div>
+</div>
