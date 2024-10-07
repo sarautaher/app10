@@ -36,12 +36,5 @@ console.log(res)
     }
   })
 }
-UpData(id:any,quantity:any){
-this._CartService.Updatecart(id,quantity).subscribe({
-  next:(res)=>{
-this.toastr.success("Success updata in Cart")
-console.log(res)
-  }
-})
-}
+
 }

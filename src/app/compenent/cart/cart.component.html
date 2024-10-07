@@ -4,7 +4,7 @@
         <h1>Shopping Cart</h1>
         <p><span>ToTal Price:</span></p>
     
-        <button class="btn bg-main text-center"> onlinePayment</button>
+        <button class="btn  text-center btn-outline-danger"> onlinePayment</button>
         <div class="row gy-2 border-bottom py-5"*ngFor="let cart of cartall">
             <div class="col-md-2">
                 <img [src]="cart.img"class="w-100">
@@ -14,13 +14,13 @@
                    
                     <button class='btn btn-outline-danger' (click)="DeleteCart(cart.id)"><i class='fa-regular fa-trash-can'></i>Remove</button>
                 </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <button class='btn btn-outline-success' (click)="UpData(cart?.id, (cart?.products?.quantity  ) + 1)">+</button>
-                        <span class='mx-2'>{{ cart?.products?.quantity  }}</span>
-                        <button class='btn btn-outline-success' (click)="UpData(cart?.id, (cart?.products?.quantity ) - 1)">-</button>
+              
+                      <div >
+
+                        <p><b class='mx-2 fs-blod'>quantity:</b> {{ cart?.products?.quantity  }}</p>  
+                          <p ><b class='mx-2 fs-6'> price:</b> {{cart.products.price | currency:'EUR'}} </p>
                       </div>
-                </div>
+                
             </div>
         </div>
     </div>

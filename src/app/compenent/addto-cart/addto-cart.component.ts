@@ -17,6 +17,7 @@ export class AddtoCartComponent {
   }
   @Input() productId: number | undefined;
   @Input() img: string | undefined;
+  @Input() price:number|undefined
  // productId:number|any
   Number:number[]=Array.from({length:2000},(_, index) => index + 1)
   date:any
@@ -29,7 +30,8 @@ this.user=new FormGroup({
   date: new FormControl(this.date),
   products:this._FormB.group({
     productId:new FormControl(this.productId),
-    quantity:new FormControl(null,[Validators.required])
+    quantity:new FormControl(null,[Validators.required]),
+    price:new FormControl(this.price)
   })
 })
 }

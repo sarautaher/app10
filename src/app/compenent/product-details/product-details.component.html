@@ -12,7 +12,7 @@
                     <p>Rate:{{ProductDetails?.rating.rate}}</p>
                     <p>Count:{{ProductDetails?.rating.count}}</p>
                 </div>
-                <app-addto-cart  [productId]="ProductDetails?.id" [img]="ProductDetails.image"></app-addto-cart>
+                <app-addto-cart  [productId]="ProductDetails?.id" [img]="ProductDetails.image"[price]="ProductDetails.price"></app-addto-cart>
                 <!-- <button class="btn btn-success w-50 m-auto  border-none my-2"[routerLink]="['/AddTocart',ProductDetails?.id]"> Add To Cart </button> -->
             </div>
         </div>

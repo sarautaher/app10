@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.custom-select {
+    height: auto; /* تتيح ارتفاع مناسب */
+    overflow-y:scroll; /* تفعيل شريط التمرير */
+   
+    size: 1; /* عرض خيار واحد */
+  }

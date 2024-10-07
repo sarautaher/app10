@@ -23,8 +23,6 @@ export class CartService {
   Deletecart(id:any):Observable<any>{
     return this._HttpClient.delete(`http://localhost:3000/Cart/${id}`)
   }
-  Updatecart(id:any,count:number):Observable<any>{
-    return this._HttpClient.put(`http://localhost:3000/Cart/${id}`,{quantity:count})
-  }
+ 
 
 }

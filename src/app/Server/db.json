@@ -15,6 +15,16 @@
       "id": "2ac9",
       "username": "Sara",
       "password": "Taher@18"
+    },
+    {
+      "id": "0614",
+      "username": "sara",
+      "password": "Atttt"
+    },
+    {
+      "id": "dd70",
+      "username": "Sarta",
+      "password": "Taher@1818"
     }
   ],
   "sinup": [
@@ -38,25 +48,103 @@
         " phone": ""
       },
       "id": "1"
+    },
+    {
+      "id": "ad26",
+      "email": "tahersara591@gmail.com",
+      "username": "sara",
+      "password": "Tsjadksa1@330",
+      "name": {
+        "firstname": "sara",
+        "lastname": "sara"
+      },
+      "address": {
+        "city": "egypt",
+        "street": "assuit",
+        "number": "0123",
+        "zipcode": "088",
+        "geolocation": {
+          "lat": "kmk",
+          "long": "jjnj"
+        }
+      },
+      "phone": "01200000000"
+    },
+    {
+      "id": "0d5a",
+      "email": "tahersara591@gmail.com",
+      "username": "sara",
+      "password": "Tsjadksa1@330",
+      "name": {
+        "firstname": "sara",
+        "lastname": "sara"
+      },
+      "address": {
+        "city": "egypt",
+        "street": "Assuit",
+        "number": "0123",
+        "zipcode": "088",
+        "geolocation": {
+          "lat": "kmk",
+          "long": "jjnj"
+        }
+      },
+      "phone": "01200000000"
     }
   ],
   "Cart": [
     {
-      "id": "5dff",
+      "id": "0e50",
       "img": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      "date": "10/3/2024",
+      "date": "10/7/2024",
       "products": {
         "productId": 2,
-        "quantity": "20"
+        "quantity": "19",
+        "price": 22.3
       }
     },
     {
-      "id": "e455",
+      "id": "a53f",
+      "img": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "date": "10/7/2024",
+      "products": {
+        "productId": 2,
+        "quantity": "110",
+        "price": null
+      }
+    },
+    {
+      "id": "538a",
+      "img": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "date": "10/7/2024",
+      "products": {
+        "productId": 5,
+        "quantity": "2",
+        "price": 695
+      }
+    },
+    {
+      "id": "5fe6",
       "img": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "date": "10/3/2024",
+      "date": "10/7/2024",
       "products": {
         "productId": 3,
-        "quantity": "22"
+        "quantity": [
+          "Quantity"
+        ],
+        "price": 55.99
+      }
+    },
+    {
+      "id": "3703",
+      "img": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "date": "10/7/2024",
+      "products": {
+        "productId": 2,
+        "quantity": [
+          12
+        ],
+        "price": 22.3
       }
     }
   ]
