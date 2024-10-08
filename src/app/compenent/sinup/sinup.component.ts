@@ -19,14 +19,14 @@ export class SinupComponent {
   }
   user: FormGroup = this._FormB.group({
     email: new FormControl(null, [Validators.required, Validators.email]),
-    username: new FormControl(null, [Validators.required, Validators.maxLength(8), Validators.minLength(3)]),
+    username: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z]/)]),
     password: new FormControl(null, [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)]),
     name: this._FormB.group({
-      firstname: new FormControl(null, [Validators.required, Validators.maxLength(8), Validators.minLength(3)]),
-      lastname: new FormControl(null, [Validators.required, Validators.maxLength(8), Validators.minLength(3)])
+      firstname: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z]/)]),
+      lastname: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z]/)])
     }),
     address: this._FormB.group({
-      city: new FormControl(null, [Validators.required, Validators.maxLength(8), Validators.minLength(3)]),
+      city: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z]/)]),
       street: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z]*$/)]),
       number: new FormControl(null, [Validators.required]),
       zipcode: new FormControl(null, [Validators.required]),
