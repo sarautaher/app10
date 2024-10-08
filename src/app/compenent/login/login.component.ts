@@ -21,16 +21,14 @@ export class LoginComponent {
     password:new FormControl(null,[Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)]),
   });
 login(user : FormGroup){
-  if(user.value){
+  if(user.valid){
     this._AuthService.login(user.value).subscribe({
       next:(res)=>{
-           localStorage.setItem('uesrToken',res.id);
+          localStorage.setItem('uesrToken',res.id);
           this._AuthService.decodeUser()
           this._Router.navigate(['/products'])
-          this.toastr.success(`Helle in webstie`);
-     
-      }
-    ,
+          this.toastr.success(`Helle in webstie`)
+      },
     error:(err)=>{
       this.toastr.error(err);
 
