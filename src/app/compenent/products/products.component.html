@@ -5,31 +5,26 @@
                 <h6>Category: </h6>   <select id="category"(change)=" getCategoryone($event)" class="form-select" >
                     <option selected >All</option>
                     <option *ngFor="let category of Category" >{{category}}</option>
-                    
                 </select>
-             
             </div>
             <div class="col-md-4" *ngFor="let product of products">
-                
-                <div class="card h-100">
+                <div class="card h-10">
                 <a [routerLink]="['/ProductDetails',product.id]" class="nav-link">
-
                         <div class="position-relative  p-5" >
-                            <img  [src]="product.image" class="w-100  card-img py-3" height="300px">
-                            <h6 class="card-title text-center py-3">{{product.category}}</h6>
+                            <img  [src]="product.image" class="w-100  card-img " height="300px">
+                            <h6 class="card-title text-center ">{{product.category}}</h6>
                             <div [ngClass]="product.price >600.0? 'bg-danger-subtle ':'bg-danger'  "class="position-absolute top-0 end-0 ">{{product.price| currency:'EUR'}}</div>
-                     
-                          
                         </div>
                     </a>
                     <div class="text-center">
                         <app-addto-cart  [productId]="product?.id" [img]="product.image" [price]="product.price"></app-addto-cart>
                       </div>
+                      <a [routerLink]="['/ProductDetails',product.id]" class="nav-link">
                       <div class="card-footer d-flex justify-content-between">
                         <p><b>Rate:</b>
                             {{product.rating.rate}}</p>
                         <p> <b>Count:</b>{{product.rating.count}}</p>
-                    </div>
+                    </div></a>
                     </div>
             </div>
     </div>
