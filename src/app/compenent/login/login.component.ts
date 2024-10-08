@@ -17,16 +17,16 @@ export class LoginComponent {
 
   }
  User:FormGroup=new FormGroup({
-    username:new FormControl(null,[Validators.required,Validators.maxLength(8),Validators.minLength(8)]),
+    username:new FormControl(null,[Validators.required,Validators.pattern(/^[A-Z][a-z]/)]),
     password:new FormControl(null,[Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)]),
   });
 login(user : FormGroup){
-  console.log(user.value)
+  if(user.value){
     this._AuthService.login(user.value).subscribe({
       next:(res)=>{
            localStorage.setItem('uesrToken',res.id);
           this._AuthService.decodeUser()
-          this._Router.navigate(['/home'])
+          this._Router.navigate(['/products'])
           this.toastr.success(`Helle in webstie`);
      
       }
@@ -37,5 +37,5 @@ login(user : FormGroup){
     }
   }
  )
-  }
+  }}
 }

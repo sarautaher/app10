@@ -20,12 +20,10 @@
             <li  class="nav-item active" *ngIf="!isload">
                 <a class="nav-link" routerLink="Sinup">Sinup </a>
             </li>
-  
-    
-             <li  class="nav-item " *ngIf="isload">
-                <a class="nav-link" routerLink="cart"><i class='fa-solid fa-cart-shopping bg-danger fa-lg '> </i>
+             <li  class="nav-item mx-3  " *ngIf="isload">
+                <a class="nav-link" routerLink="cart"><i class='fa-solid fa-cart-shopping text-danger fa-2x position-relative '> </i>
             
-                    <span class="badge bg-main "> </span>
+                    <span class="badge bg-danger position-absolute ">{{cartlength}} </span>
                  </a>
             </li>
   

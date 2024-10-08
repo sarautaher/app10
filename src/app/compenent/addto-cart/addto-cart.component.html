@@ -1,18 +1,20 @@
-<div >
+<div class="py-2 ">
     <form class="form" [formGroup]="user" (ngSubmit)="addnew(user)">
-    <div class="d-flex   align-items-center">
-      <div [formGroupName]="'products'" >
+    <div class="row justify-content-around " >
+      <div [formGroupName]="'products'" class=" col-4 " >
       
     <select formControlName="quantity"class="form-select" size="1"multiple aria-label="multiple select example">
       <option selected disabled>Quantity</option>
-              <option *ngFor="let quantity of Number" [value]="quantity">{{quantity}}</option>
+              <option *ngFor="let quantity of Number" class="text-center" [value]="quantity">{{quantity}}</option>
             </select>
          
           <div *ngIf="user.get('products.quantity').invalid && user.get('products.quantity').touched" class="text-danger">
             <small>Quantity is required!  </small>
           </div>
+        </div>
+        <div class="col-4">
+          <button  class="form-control bg-danger  m-auto  border-0 text-center text-white  "[disabled]="user.invalid" type="submit"> Add To Cart </button>
+        </div>
           </div>
-          <button class="btn bg-danger w-50 m-auto  border-0 my-2"[disabled]="user.invalid" type="submit"> Add To Cart </button>
-    </div>
 </form>
 </div>

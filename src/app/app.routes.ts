@@ -10,7 +10,7 @@ import { NotFoundComponent } from './compenent/not-found/not-found.component';
 import { authGuard } from './Guard/auth.guard';
 
 export const routes: Routes = [
-    {path:'',redirectTo:'home',pathMatch:'full'}
+    {path:'',redirectTo:'products',pathMatch:'full'}
     ,{path:'home',component:HomeComponent,canActivate:[authGuard], title:'home'},
     {path:'login', component:LoginComponent,title:'sinin'},
     {path:'Sinup', component:SinupComponent,title:'Sinup'},

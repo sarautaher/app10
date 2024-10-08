@@ -38,6 +38,7 @@ export class SinupComponent {
     phone: new FormControl(null, [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)])
   });
   sinUp(user:FormGroup){
+    if(user.value){
     this._AuthService.sinup(user.value).subscribe({
       next:(res)=>{ 
         localStorage.setItem('uesrToke',res.id);
@@ -47,6 +48,6 @@ export class SinupComponent {
       ,error:(err)=>{
         this.toastr.error(err.message)
       }
-    })
+    })}
   }
 }

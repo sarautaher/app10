@@ -10,9 +10,8 @@
                             <input class="form-control m-3" type="text" formControlName="username" placeholder="Enter Your Username">
                             <div *ngIf="User.get('username')?.errors &&User.touched" >
                                 <p class="text-danger" *ngIf="User.get('username')?.getError('required')"> Username is required</p>
-                                <p class="text-danger" *ngIf="User.get('username')?.getError('maxLength')"> Username must be maxLength 8</p>
-                                <p class="text-danger" *ngIf="User.get('username')?.getError('minLength')"> Username must be minLength 3</p>
-                            </div>
+                                <p class="text-danger" *ngIf="User.get('username')?.getError('pattern')"> Username must Start uppercase letter</p>
+                                   </div>
                         </div>
                         <div class="col-12 ">
                             <input class="form-control m-3" type="password" formControlName="password" placeholder="Enter Your Password">
